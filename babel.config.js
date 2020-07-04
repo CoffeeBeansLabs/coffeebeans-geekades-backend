@@ -12,6 +12,11 @@ module.exports = (api) => {
       ],
     ],
     plugins: [
+      [
+        'babel-plugin-root-import', {
+          paths: [{ rootPathPrefix: '~', rootPathSuffix: 'src' }],
+        },
+      ],
       '@babel/plugin-proposal-class-properties',
       'lodash',
     ],

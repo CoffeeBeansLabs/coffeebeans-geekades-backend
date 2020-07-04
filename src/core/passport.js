@@ -2,6 +2,7 @@ import passport from 'passport';
 import { Strategy as OAuth2Strategy } from 'passport-google-oauth20';
 
 import { AUTH } from '../env';
+// import app from '../app';
 
 passport.use(new OAuth2Strategy({
   clientID: AUTH.GOOGLE.clientID,
@@ -14,7 +15,7 @@ passport.use(new OAuth2Strategy({
       // generate new token
       // insert new token into DB
       // return token with success bool
-      done(null, profile)
+      return done(null, profile)
     } catch (error) {
       return done(error);
     }
