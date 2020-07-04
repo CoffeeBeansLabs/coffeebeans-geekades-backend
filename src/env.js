@@ -5,12 +5,13 @@ export const PORT = process.env.PORT || 3000;
 
 export const SECRET = process.env.SECRET || 'jbmpHPLoaV8N0nEpuLxlpT95FYakMPiu';
 
-export const POSTGRES_URL = process.env.POSTGRES_URL || 'postgres://ymuxoegt:ONfBcCQylth3boOdUE2EkcZbC2OAbtcm@tantor.db.elephantsql.com:5432/ymuxoegt';
+export const POSTGRES_URL = process.env.POSTGRES_URL || 'postgres://sudeep:@127.0.0.1:5432/quize';
 
 export const AUTH = {
   GOOGLE: {
-    clientID: process.env.GOOGLE_ID || '584431831746-9b5743ro43sn7p6nfgbui0kqhj557kvt.apps.googleusercontent.com',
-    clientSecret: process.env.GOOGLE_SECRET || 'stZ7p0BC_oQrUvJKsvqAxehT',
+    clientID: process.env.GOOGLE_ID || '674308453172-k72a2a8pa39u7330n765cgp0vq2596s0.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'VxUI3MHWdcrPhBSXEeIMTuSu',
+    redirectURL: process.env.GOOGLE_SECRET || 'http://locahost:3000/authentication/google/callback'
   }
 };
 
