@@ -2,7 +2,7 @@ import http from 'http';
 import socket from 'socket.io';
 import chalk from 'chalk';
 
-import sequelize from '~/core/sequelize';
+import sequelize from './core/sequelize';
 
 import { PORT, HOST } from './env';
 import app from './app';

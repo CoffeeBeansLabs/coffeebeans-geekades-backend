@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import helloWorld from '~/hello-world/rest';
-import authentication from '~/authentication/rest';
+import helloWorld from '../hello-world/rest';
+import authentication from '../authentication/rest';
 
 const router = Router();
 

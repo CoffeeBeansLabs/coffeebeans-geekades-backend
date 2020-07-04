@@ -5,14 +5,12 @@ import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import compression from 'compression';
 import morgan from 'morgan';
-import session from 'express-session';
 import history from 'express-history-api-fallback';
 
-import routes from '~/core/rest';
-import passport from '~/core/passport';
-import redis from '~/core/redis';
+import routes from './core/rest';
+import passport from './core/passport';
 
-import { SECRET, RATE_LIMIT, STATIC_FILES } from './env';
+import { RATE_LIMIT, STATIC_FILES } from './env';
 
 const app = express();
 
@@ -26,13 +24,6 @@ app.use(compression());
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(session({
-  store: new (connectRedis(session))({ client: redis }),
-  name: 'sid',
-  resave: true,
-  saveUninitialized: true,
-  secret: SECRET,
-}));
 app.use(passport.initialize());
 app.use(passport.session());
 

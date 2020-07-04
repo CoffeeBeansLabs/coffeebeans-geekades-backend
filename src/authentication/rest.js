@@ -3,9 +3,7 @@ import passport from 'passport';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-import { SECRET } from '~/env';
-
-import { User } from './document';
+import { SECRET } from '../env';
 
 const router = Router();
 
@@ -71,29 +69,6 @@ router.get('/profile', passport.authenticate('jwt', { session: false }), async (
   const { user } = req;
 
   res.status(200).json({ user });
-});
-
-/**
- * @name profile - Update user profile
- */
-router.put('/profile', async (req, res) => {
-  res.json({});
-});
-
-router.post('/impression-password', async (req, res) => {
-  res.json({});
-});
-
-router.post('/forgot-password', async (req, res) => {
-  res.json({});
-});
-
-router.post('/change-email', async (req, res) => {
-  res.json({});
-});
-
-router.post('/change-password', async (req, res) => {
-  res.json({});
 });
 
 export default router;
