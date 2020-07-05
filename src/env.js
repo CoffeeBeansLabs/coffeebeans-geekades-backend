@@ -5,10 +5,10 @@ export const PORT = process.env.PORT || 3000;
 
 export const SECRET = process.env.SECRET || 'jbmpHPLoaV8N0nEpuLxlpT95FYakMPiu';
 
-export const POSTGRES_USERNAME = process.env.POSTGRES_USERNAME || 'sudeep';
-export const POSTGRES_HOST = process.env.POSTGRES_HOST || '127.0.0.1';
+export const POSTGRES_USERNAME = process.env.POSTGRES_USERNAME || 'geekades';
+export const POSTGRES_HOST = process.env.POSTGRES_HOST || '10.0.0.236';
 export const POSTGRES_DATABASE = process.env.POSTGRES_DATABASE || 'quize';
-export const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD || '';
+export const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD || 'geekades';
 export const POSTGRES_PORT = process.env.POSTGRES_PORT || '5432';
 
 export const AUTH = {
