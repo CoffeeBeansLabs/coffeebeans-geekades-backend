@@ -15,7 +15,7 @@ export const AUTH = {
   GOOGLE: {
     clientID: process.env.GOOGLE_ID || '674308453172-k72a2a8pa39u7330n765cgp0vq2596s0.apps.googleusercontent.com',
     clientSecret: process.env.GOOGLE_SECRET || 'VxUI3MHWdcrPhBSXEeIMTuSu',
-    redirectURL: process.env.GOOGLE_SECRET || 'http://locahost:3000/authentication/google/callback'
+    redirectURL: process.env.GOOGLE_SECRET || 'http://locahost:4200/'
   }
 };
 

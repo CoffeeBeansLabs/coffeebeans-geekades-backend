@@ -77,7 +77,20 @@ const getResult = () => {
   return _RESULT;
 };
 
+const GOOGLE_OAUTH2_URL = 'https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=';
+
+let _onGoingTimer = null;
+
+const getOnGoingTimer = () => {
+  return _onGoingTimer;
+}
+
+const setOnGoingTimer = (timer) => {
+  _onGoingTimer = timer;
+}
+
 export {
+  GOOGLE_OAUTH2_URL,
   data,
   setState,
   getState,
@@ -93,4 +106,6 @@ export {
   getLastImage,
   setResult,
   getResult,
+  getOnGoingTimer,
+  setOnGoingTimer
 }

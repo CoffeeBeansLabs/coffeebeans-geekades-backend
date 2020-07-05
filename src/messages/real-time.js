@@ -1,11 +1,8 @@
 import { indexOf } from 'lodash';
-import app from '../app';
 
 import { 
   data, getState, getRound, getImage, getStartTime, getEventTime, getLastImage, getResult
 } from '../core/config';
-
-const pool = app.get('poolClient');
 
 const sockets = {};
 
@@ -19,21 +16,21 @@ const closeConnection = (io, email) => {
   }
 };
 
-const emitGameStartsInMessage = (client) => {
+export const emitGameStartsInMessage = (client) => {
   client.emit("starts_in", {
     time: (new Date(data.config.START_TIME) - Date.now()) / 1000,
     type: "GAME"
   });
 };
 
-const emitRoundStartsInMessage = (client) => {
+export const emitRoundStartsInMessage = (client) => {
   client.emit("starts_in", {
     time: (new Date(getStartTime()) - Date.now()) / 1000,
     type: "ROUND"
   });
 };
 
-const emitNextHintMessage = (client, img, hintTime, last, count) => {
+export const emitNextHintMessage = (client, img, hintTime, last, count) => {
   client.emit("next_hint", {
     img,
     hint_time: (hintTime - Date.now()) / 1000,
@@ -42,7 +39,7 @@ const emitNextHintMessage = (client, img, hintTime, last, count) => {
   });
 };
 
-const emitWinnerMessage = (client, RESULT) => {
+export const emitWinnerMessage = (client, RESULT) => {
   client.emit("result", {
     winners: {
       name: RESULT.name || "",
@@ -53,7 +50,7 @@ const emitWinnerMessage = (client, RESULT) => {
   });
 };
 
-export const registerFunction = (client) => {
+export const registerFunction = (client, pool) => {
   client.on("register", ({ token }) => {
     pool.query(
       "SELECT * FROM users WHERE token = $1",
@@ -144,7 +141,7 @@ export const registerFunction = (client) => {
   });
 };
 
-export const unRegisterFunction = (client) => {
+export const unRegisterFunction = (client, pool) => {
   client.on("unregister", ({ token }) => {
     pool.query(
       "SELECT * FROM users WHERE token = $1",
