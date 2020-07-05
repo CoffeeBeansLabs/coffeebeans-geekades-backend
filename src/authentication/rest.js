@@ -13,7 +13,7 @@ router.post('/login', async (req, res) => {
       // requesting google for data
       const response = await fetch(
         GOOGLE_OAUTH2_URL + req.body.token
-      );
+      ).then(oauthRes => oauthRes.json());
 
       // checking google response
       if (!response.email) returnError(res, 401, "Invalid credentials & no email");
