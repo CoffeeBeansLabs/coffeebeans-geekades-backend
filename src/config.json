@@ -1,0 +1,26 @@
+{
+  "config": {
+    "DEBUG": true,
+    "STATE": 0,
+    "IMAGE": 0,
+    "ROUND": -1,
+    "ROUND_INTERVAL": 0,
+    "RESULT_TIME": 0,
+    "START_TIME": "2020-07-05 16:35:00"
+  },
+  "rounds": [
+    {
+      "round_time": 120,
+      "answer": "test user",
+      "image": "",
+      "images": []
+    },
+    {
+      "round_time": 120,
+      "answer": "test user #2",
+      "image": "",
+      "images": []
+    },
+    {}
+  ]
+}

@@ -123,12 +123,6 @@ export const PORT = process.env.PORT || 3000;
 
 export const SECRET = process.env.SECRET || 'PUT_YOUR_SECRET_HERE';
 
-export const MONGODB_URI = process.env.MONGODB_URI || '<PUT_YOUR_MONGODB_URI_HERE>';
-export const POSTGRES_URL = process.env.POSTGRES_URL || 'PUT_YOUR_POSTGRES_URL_HERE';
-
-export const REDIS_PORT = process.env.REDIS_PORT || '<PUT_YOUR_REDIS_PORT_HERE>';
-export const REDIS_HOST = process.env.REDIS_HOST || '<PUT_YOUR_REDIS_HOST_HERE>';
-
 // ...
 ```
 
@@ -141,12 +135,6 @@ Set your deployment environment variables.
 
 # envs --
 ENV SECRET <PUT_YOUR_SECRET_HERE>
-
-ENV MONGODB_URI <PUT_YOUR_MONGODB_URI>
-ENV POSTGRES_URL <PUT_YOUR_POSTGRES_URL_HERE>
-
-ENV REDIS_PORT <PUT_YOUR_REDIS_PORT_HERE>
-ENV REDIS_HOST <PUT_YOUR_REDIS_HOST_HERE>
 
 # ...
 # -- envs
